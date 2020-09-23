@@ -6,7 +6,7 @@ on:
     branches: [master]
 jobs:
   push_to_registry:
-    name: Push Docker image to Github Container Registry
+    name: Push Docker image to Github Package Container Registry
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -17,6 +17,6 @@ jobs:
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-          registry: ghcr.io
-          repository: ${{ github.repository_owner }}/zola
+          registry: docker.pkg.github.com
+          repository: ${{ github.repository_owner }}/zola-docker/zola
           tag_with_ref: true
