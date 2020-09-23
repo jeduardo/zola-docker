@@ -17,6 +17,6 @@ jobs:
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-          registry: docker.pkg.github.com
-          repository: ${{ github.repository_owner }}/zola-docker/zola
+          registry: ghcr.io
+          repository: ${{ github.repository_owner }}/zola
           tag_with_ref: true
