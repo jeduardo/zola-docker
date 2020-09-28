@@ -1,7 +1,7 @@
 FROM rust:slim-buster AS fetcher
 WORKDIR /
 RUN apt-get update && \
-    apt-get install -y curl
+    apt-get install -y curl git
 RUN curl -sL $(curl -s https://api.github.com/repos/getzola/zola/releases/latest | \
     grep browser_download_url | \
     grep -i $(uname -s) | \
