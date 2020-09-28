@@ -11,6 +11,6 @@ RUN curl -sL $(curl -s https://api.github.com/repos/getzola/zola/releases/latest
 RUN chmod u+x zola
 
 FROM debian:buster-slim
-RUN apt-get update && apt-get install -y git
+RUN apt-get update && apt-get install -y git awscli
 WORKDIR /
 COPY --from=fetcher /zola /usr/local/bin/zola
